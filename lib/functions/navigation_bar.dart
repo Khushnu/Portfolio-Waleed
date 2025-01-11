@@ -1,0 +1,204 @@
+import 'package:flutter_application_2/functions/navigate.dart';
+import 'package:flutter_application_2/Waleed%20Portfolio/ToResponsivePage/toResponsiveLayout_Main.dart';
+import 'package:flutter_application_2/Waleed%20Portfolio/ToResponsivePage/toResponsive_AboutMe.dart';
+import 'package:flutter_application_2/Waleed%20Portfolio/ToResponsivePage/toResponsive_Projects.dart';
+import 'package:flutter_application_2/Waleed%20Portfolio/ToResponsivePage/toResponsive_contactMe.dart';
+import 'package:flutter_application_2/styles/styles.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class NavigationWrapper extends StatefulWidget {
+  final Widget child;
+  final bool showNavBar;
+  final int currentIndex;
+
+  const NavigationWrapper({
+    super.key,
+    required this.child,
+    this.showNavBar = true,
+    required this.currentIndex,
+  });
+
+  @override
+  State<NavigationWrapper> createState() => _NavigationWrapperState();
+}
+
+class _NavigationWrapperState extends State<NavigationWrapper> {
+  late int _selectedIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedIndex = widget.currentIndex;
+  }
+
+  @override
+  void didUpdateWidget(NavigationWrapper oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.currentIndex != oldWidget.currentIndex) {
+      _selectedIndex = widget.currentIndex;
+    }
+  }
+
+  // List of pages for navigation
+  final List<Widget> pages = [
+    const ToResponsiveLayout(),
+    const ToResponsiveLayoutProject(initialIndex: 0),
+    const ToResponsiveLayoutContactMe(),
+    const ToResponsiveLayoutAboutMe(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    double deviceWidth = MediaQuery.of(context).size.width;
+    return Stack(
+      alignment: Alignment.bottomCenter,
+      children: [
+        widget.child,
+        _selectedIndex == 1
+            ? Container(
+                width: deviceWidth,
+                height: navigation_containerStyle.height + 40,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color.fromARGB(0, 0, 0, 0),
+                      Color.fromARGB(85, 0, 0, 0),
+                      Color.fromARGB(200, 0, 0, 0),
+                    ],
+                    stops: [
+                      0.33,
+                      0.66,
+                      0.99,
+                    ],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
+                ),
+              )
+            : const Offstage(),
+        widget.showNavBar
+            ? Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color(0xff00b4d8),
+                        Color(0xffcaf0f8),
+                      ],
+                      stops: [0, 1],
+                      begin: Alignment.bottomRight,
+                      end: Alignment.topLeft,
+                    ),
+                    borderRadius: BorderRadius.circular(16),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black26,
+                        offset: Offset(0, 4),
+                        blurRadius: 8,
+                      ),
+                    ],
+                  ),
+                  height: navigation_containerStyle.height,
+                  padding: navigation_containerStyle.padding,
+                  width: deviceWidth < 412
+                      ? deviceWidth * navigation_containerStyle.width
+                      : 412,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: GNav(
+                      tabBorderRadius: 10,
+                      haptic: true,
+                      backgroundColor: Colors.transparent,
+                      gap: 8.5,
+                      color: Colors.white30,
+                      activeColor: Colors
+                          .white, // Soft aqua for active tab text                      rippleColor: Colors.white54,
+                      hoverColor: Colors.white10,
+                      iconSize: deviceWidth < 412
+                          ? deviceWidth * 0.07
+                          : 24, // Adjust icon size
+                      textStyle: GoogleFonts.chakraPetch(
+                        textStyle: textStyles.B,
+                        fontSize: deviceWidth < 412
+                            ? deviceWidth * 0.04
+                            : 16, // Adjust text size
+                      ),
+                      tabBackgroundColor: Colors.grey[900]!,
+                      padding: const EdgeInsets.all(12), // Adjust padding
+                      duration: const Duration(milliseconds: 800),
+                      tabs: const [
+                        GButton(
+                          icon: Icons.home_filled,
+                          text: 'Home',
+                          iconColor: Colors.white,
+                          haptic: true,
+                          semanticLabel: "Home",
+                        ),
+                        GButton(
+                          icon: Icons.folder,
+                          iconColor: Colors.grey,
+                          iconActiveColor: Colors.white,
+                          text: 'Projects',
+                          haptic: true,
+                          semanticLabel: "Projects",
+                        ),
+                        GButton(
+                          icon: Icons.person,
+                         iconColor: Colors.grey,
+                          iconActiveColor: Colors.white,
+                          text: 'About Me',
+                          haptic: true,
+                          semanticLabel: "About Me",
+                        ),
+                        GButton(
+                          icon: Icons.mail,
+                          text: 'Contact Me',
+                         iconColor: Colors.grey,
+                          iconActiveColor: Colors.white,
+                          haptic: true,
+                          semanticLabel: "Contact Me",
+                        ),
+                      ],
+                      selectedIndex: _selectedIndex,
+                      onTabChange: (index) {
+                        setState(() {
+                          _selectedIndex = index;
+                        });
+                        switch (index) {
+                          case 0:
+                            navigateTo(context,
+                                const ToResponsiveLayout(currentIndex: 0));
+                            break;
+                          case 1:
+                            navigateTo(
+                                context,
+                                const ToResponsiveLayoutProject(
+                                    initialIndex: 0, currentIndex: 1));
+                            break;
+                          case 2:
+                            navigateTo(
+                                context,
+                                const ToResponsiveLayoutAboutMe(
+                                    currentIndex: 2));
+                            break;
+                          case 3:
+                            navigateTo(
+                                context,
+                                const ToResponsiveLayoutContactMe(
+                                    currentIndex: 3));
+                            break;
+                        }
+                      },
+                    ),
+                  ),
+                ),
+              )
+            : const Offstage(),
+      ],
+    );
+  }
+}
