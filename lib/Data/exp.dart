@@ -33,6 +33,16 @@ List<Experience> experiences = [
     end: false,
   ),
   Experience(
+    role: 'Flutter Full Stack Developer',
+    companyName: 'LinaSoft Soltuions Malaysia',
+    startTime: 'March 2023',
+    endTime: 'Present',
+    workType: 'Hybrid',
+    duration: '1 year 9 months',
+    start: true,
+    end: false,
+  ),
+  Experience(
     role: 'Xamarin Forms Developer',
     companyName: 'ANP (Political Party)',
     startTime: 'Aug 2019',

@@ -33,6 +33,82 @@ class Project {
 
 List<Project> projects = [
   Project(
+    image: "assets/ss/jegan.png",
+    title: "Jegan Global Trading Sdn Bhd",
+    description:
+        "A Product Sourcing Company based in Malaysia.",
+    icon: "assets/ss/tracking-app.png",
+    listTechStack: [
+      "assets/svg/flutter.svg", 
+      "assets/svg/dart.svg", 
+      "assets/svg/api.svg", 
+
+    ],
+    keyFeatures:
+        "• Product Sourcing \n• Deliver Product \n• User-Friendly Interface \n• Form Spree",
+    githubLink: "https://github.com/Khushnu",
+    demoVideoLink: "https://www.jagansglobal.com/",
+    screenshot1: "assets/ss/tonom.png",
+    screenshot2: "assets/ss/tonom2.png",
+  ),
+  Project(
+    image: "assets/ss/wong.png",
+    title: "Wonga WorldWide Resources Sdn Bhd",
+    description:
+        "A Product Sourcing Company based in Malaysia.",
+    icon: "assets/ss/online-shopping.png",
+    listTechStack: [
+      "assets/svg/flutter.svg", 
+      "assets/svg/dart.svg", 
+      "assets/svg/api.svg", 
+
+    ],
+    keyFeatures:
+        "• Product Sourcing \n• Deliver Product \n• User-Friendly Interface \n• Form Spree",
+    githubLink: "https://github.com/Khushnu",
+    demoVideoLink: "https://wongaworldwide.com/#/home",
+    screenshot1: "assets/ss/tonom.png",
+    screenshot2: "assets/ss/tonom2.png",
+  ),
+  Project(
+    image: "assets/ss/rtr.png",
+    title: "Reciprocity Trading Sdn Bhd",
+    description:
+        "A Product Sourcing Company based in Malaysia Sourcing Product to Delivery it to The Door Step.",
+    icon: "assets/ss/shipping.png",
+    listTechStack: [
+      "assets/svg/flutter.svg", 
+      "assets/svg/dart.svg", 
+      "assets/svg/api.svg", 
+    ],
+    keyFeatures:
+        "• Product Sourcing \n• Product Listing \n• Deliver Product \n• User-Friendly Interface \n• Form Spree",
+    githubLink: "https://github.com/Khushnu",
+    demoVideoLink: "https://www.reciprotrade.com/",
+    screenshot1: "assets/ss/tonom.png",
+    screenshot2: "assets/ss/tonom2.png",
+  ),
+  
+  Project(
+    image: "assets/ss/mars.png",
+    title: "Mars Capital Trading Sdn Bhd",
+    description:
+        "Unlock global potential with our tailored import-export solutions for thriving businesses worldwide.",
+    icon: "assets/ss/sourcing.png",
+    listTechStack: [
+      "assets/svg/flutter.svg", 
+      "assets/svg/dart.svg", 
+      "assets/svg/api.svg", 
+    ],
+    keyFeatures:
+        "• Product Sourcing \n• Product Listing \n• Deliver Product \n• User-Friendly Interface \n• Form Spree",
+    githubLink: "https://github.com/Khushnu",
+    demoVideoLink: "https://marscapitalx.com/",
+    screenshot1: "assets/ss/tonom.png",
+    screenshot2: "assets/ss/tonom2.png",
+  ),
+
+  Project(
     image: "assets/ss/s1.png",
     title: "Tonomo",
     description:
@@ -99,8 +175,8 @@ List<Project> projects = [
     ],
     keyFeatures:
         "• Local Database \n• Multiple Resume Design \n• Download PDF feature\n• ATS Friendly Designs",
-    githubLink: "https://github.com/nakuldevmv/Portfolio-Website",
-    demoVideoLink: "https://nakuldevmv.github.io/",
+    githubLink: "https://github.com/Khushnu",
+    demoVideoLink: "https://linkedin.com/feed/update/urn:li:activity:7214247876141481984/?originTrackingId=WLFVcQX2S82imrT0Gkd6Bg%3D%3D",
     screenshot1: "assets/ss/first.png",
     screenshot2: "assets/ss/second.png",
   ),
