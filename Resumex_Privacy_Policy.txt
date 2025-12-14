@@ -1,0 +1,31 @@
+Privacy Policy – Resumex
+
+1. Introduction
+Resumex respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and protect your data when you use the Resumex application.
+
+2. Account & Authentication Information
+When you sign up or log in, we collect authentication-related information such as your email address and user ID. This data is used only for account identification and login purposes.
+
+3. Resume Data Storage
+Resume content including experience, education, skills, and summaries is NOT stored on our servers or in Supabase. All resume data remains locally on your device and is only processed temporarily when AI features are used.
+
+4. AI Usage
+Resumex uses AI to help generate and improve resume content. Your data is processed temporarily to generate suggestions and is never used to train AI models.
+
+5. Automatically Collected Information
+We may collect limited technical data such as device type, app usage statistics, and crash reports to improve performance and stability.
+
+6. Data Sharing
+We do not sell, rent, or share your personal data with third parties. Data may only be disclosed if required by law or to protect users and the application.
+
+7. Data Security
+We use reasonable security measures to protect your information. However, no digital storage method is 100% secure.
+
+8. Children’s Privacy
+Resumex is not intended for children under the age of 13. We do not knowingly collect personal data from children.
+
+9. Changes to This Policy
+We may update this Privacy Policy from time to time. Any changes will be reflected within the app.
+
+10. Contact Us
+If you have any questions about this Privacy Policy, please contact us at waleedah247@gmail.com
